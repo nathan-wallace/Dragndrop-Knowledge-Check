@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+/*
+	Copyright (C) 2014  1ST AMERICAN SYSTEMS AND SERVICES
+*/
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Drag and Drop Interface</title>
+		<link type="text/css" rel="stylesheet" href="css/dragndrop.css" />
+        <script type="text/javascript" src="js/require.js" data-main="js/getjs"></script>
+        <script type="text/javascript" language="javascript">
+        var tries = 1;
+		var correctFB = "Correct!";
+		var incorrectFB = "Incorrect.";
+		var tryAgain = "Please try again.";
+		var id;
+		
+		// these items need to be edited
+		var maxTries = 2;
+		var correctAnswer = "a,b,c,d";
+		var restOfFeedback = 'A Daily routine would consist of waking up, brushing your teeth, going to work and going to sleep.';
+		// end editable items
+
+    </script>
+        
+</head>
+
+<body>
+
+<header><h2>Check Your Knowledge</h2></header>
+<section><p>Put following activities into order as they relate to a daily routine.</p></section>
+    <div id="content"> 
+   
+        <section>
+            <div role="tablist" class="draggable_container">
+                <a><div role="tab" tabindex="1" id="a" class="draggable" aria-grabbed="false"><li>Wake Up</li></div></a>
+                <a><div role="tab" tabindex="2" id="b" class="draggable" aria-grabbed="false"><li>Brush Your Teeth</li></div></a>
+                <a><div role="tab" tabindex="3" id="c" class="draggable" aria-grabbed="false"><li>Go To Work</li></div></a>
+                <a><div role="tab" tabindex="4" id="d" class="draggable" aria-grabbed="false"><li>Go To Sleep</li></div></a>
+                 <div role="tab" tabindex="5"><a class="kcSubmit" href="#" >Submit</a></div>
+                 <button id="btnReset">X</button>
+                 <button id="instructions">?</button>
+            </div>
+            
+            <div class="droppable_container"> <form id="myform" class="kc_matching">
+                <div id="itemDrop1" class="dropZone">
+                    <div class="drop-header"><label for="1">Step 1</label></div>
+                    <div aria-dropeffect="move execute" class="droppable" data-dropnum="1">
+                    <input type="text" name="distractors" id="a" value="" style="display:none;" />
+                    </div>
+                </div>
+                 <div id="itemDrop1" class="dropZone">
+                    <div class="drop-header"><label for="2">Step 2</label></div>
+                    <div aria-dropeffect="move execute"  class="droppable" data-dropnum="2">
+                    <input type="text" name="distractors" id="b" value="" style="display:none;" />
+                    </div>
+                </div>
+                 <div id="itemDrop1" class="dropZone">
+                    <div class="drop-header"><label for="3">Step 3</label></div>
+                     <div aria-dropeffect="move execute" class="droppable" data-dropnum="3">
+                    <input type="text" name="distractors" id="c" value="" style="display:none; width:100%; height:200px;" />
+                    </div>
+                </div>
+                 <div id="itemDrop1" class="dropZone">
+                    <div class="drop-header"><label for="4">Step 4</label></div>
+                    <div aria-dropeffect="move execute"  class="droppable" data-dropnum="4">
+                    <input type="text" name="distractors" id="d" value="" style="display:none;" />
+                    </div>
+                    </form>
+                <div id="kcFeedback" class="hidden"> <button id="btnReset">X</button><p id="feedback"></p></div>
+                <div id="instructions_panel" class="hidden"><p style="text-align:center; text-decoration:underline;"><b>Keyboard Navigation</b></p><p><br/><b>Escape Key:</b><br/> Reset all draggables to their original container. <br/><br/><b>Tab Key:</b><br/> Selects elements on the page. <br/><br/><b>Right and Left Arrow Keys:</b><br/>Move selected draggables left or right respectively.<br/><br/><b>Enter Key:</b><br/> When button is selected, submit your answer.</p></div>
+                </div>
+                
+            </div>        
+       
+        </section>
+    </div>
+</body>
+</html>
